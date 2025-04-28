@@ -9,19 +9,19 @@ var products = new List<Product>
     new() { Name = "Broccoli", Category = "Vegetables" }
 };
 
-var fruits = products.GroupBy(x => x.Category == "Fruits");
-var vegetables = products.GroupBy(x => x.Category == "Vegetables");
+var fruits = products.FindAll(x => x.Category == "Fruits");
+var vegetables = products.FindAll(x => x.Category == "Vegetables");
 
 Console.WriteLine("Фрукты:");
 foreach (var fruit in fruits)
 {
-    Console.WriteLine(fruit);
+    Console.WriteLine(string.Join("\n", fruit));
 }
 
-Console.WriteLine("Овощи:");
+Console.WriteLine("\nОвощи:");
 foreach (var vegetable in vegetables)
 {
-    Console.WriteLine(vegetable);
+    Console.WriteLine(string.Join("\n", vegetable));
 }
 
 
