@@ -9,8 +9,12 @@ var products = new List<Product>
     new() { Name = "Broccoli", Category = "Vegetables" }
 };
 
-var fruits = products.FindAll(x => x.Category == "Fruits");
-var vegetables = products.FindAll(x => x.Category == "Vegetables");
+var fruits = from product in products
+                where product.Category == "Fruits"
+                    select product;
+var vegetables = from product in products
+                where product.Category == "Vegetables"
+                    select product;
 
 Console.WriteLine("Фрукты:");
 foreach (var fruit in fruits)
