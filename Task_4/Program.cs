@@ -25,7 +25,6 @@ var studentGrades = from student in students
         grade.LetterGrade
     };
 
-// Вывод результата
 foreach (var item in studentGrades)
 {
     Console.WriteLine($"{item.Id} - {item.Name} - {item.Subject}: {item.LetterGrade}");

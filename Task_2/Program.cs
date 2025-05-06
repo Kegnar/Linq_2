@@ -7,8 +7,10 @@ var books = new List<Book>
     new Book { Title = "To Kill a Mockingbird" },
     new Book { Title = "The Great Gatsby" }
 };
-var sorted = books.OrderBy(b => b.Title);
-foreach (var item in sorted)
+var sorted = from book in books
+                                    orderby book.Title ascending    
+                                    select book;
+foreach (var book in sorted)
 {
-    Console.WriteLine(item.Title);
+    Console.WriteLine(book.Title);
 }
